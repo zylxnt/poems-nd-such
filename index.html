@@ -120,8 +120,23 @@
                             A landscape of contemplation, in the still of the night.
                             Masked emotions play their part, a charade I play so well,
                             Hiding the emptiness, as I navigate this spell.`;
-            }
+            } else if (poemTitle === "A Tapestry of Grief") {
+                poemText = `
+                            Grief doesn't just shrink and decay, it lingers and stays,
+                            A shadow in the heart, in so many different ways.
+                            It weaves itself into the tapestry of your existence,
+                            A part of life's complex and intricate persistence.
 
+                            With time, it doesn't vanish, nor simply disappear,
+                            It's a constant companion, forever near.
+                            Your life grows around it, a tree's roots embrace the earth,
+                            In the depths of your being, grief finds its rebirth.
+
+                            Though the pain may lessen, the tears may subside,
+                            Grief becomes a part of you, where emotions collide.
+                            It shapes your perspective, colors the world you see,
+                            A bittersweet reminder of what used to be.`; 
+            }
             if (openPoems[poemId]) {
                 // If the poem is already open, close it.
                 document.getElementById(poemId).remove();
@@ -142,12 +157,13 @@
     <div class="container">
         <h1><a href="https://www.tiktok.com/@zylxnt" target="_blank" style="color: #8a2be2;">TikTok</a></h1>
         <h2><a href="https://twitter.com/zylxnt" target="_blank" style="color: #8a2be2;">Twitter/X</a></h2>
-        <p style="font-size: smaller;">I write all the poems that I post on this website and my social media. if you use any of my poems, please credit me.</p>
+        <p style="font-size: smaller;">I write all the poems that I post on this website and my social media</p>
         <div id="poemContainer">
             <button onclick="displayPoem('1; the gentle brown earth', 'poem1')">1; the gentle brown earth</button>
             <button onclick="displayPoem('Fortunes of the Flock', 'poem2')">Fortunes of the Flock</button>
             <button onclick="displayPoem('Chains of Fear and Hope', 'poem3')">Chains of Fear and Hope</button>
             <button onclick="displayPoem('The Masked Charade', 'poem4')">The Masked Charade</button>
+            <button onclick="displayPoem('A Tapestry of Grief', 'poem5')">A Tapestry of Grief</button>
         </div>
     </div>
 </body>
