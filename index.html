@@ -9,15 +9,32 @@
             background-position: center;
             background-attachment: fixed;
             color: #ffffff; /* Set text color to white for better visibility */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
         }
 
-        #poemContent {
+        .container {
+            max-height: 70vh; /* Set a maximum height for the container */
+            overflow-y: auto; /* Enable vertical scrolling when the content exceeds the container height */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .poemSection {
             background-color: rgba(0, 0, 0, 0.7); /* Add a semi-transparent background to make the text more readable */
             padding: 20px;
+            margin-bottom: 20px;
         }
     </style>
     <script>
-        function displayPoem(poemTitle) {
+        var openPoems = {};
+
+        function displayPoem(poemTitle, poemId) {
             var poemText = "";
             if (poemTitle === "1; the gentle brown earth") {
                 poemText = `
@@ -104,18 +121,34 @@
                             Masked emotions play their part, a charade I play so well,
                             Hiding the emptiness, as I navigate this spell.`;
             }
-            document.getElementById("poemContent").textContent = poemText;
+
+            if (openPoems[poemId]) {
+                // If the poem is already open, close it.
+                document.getElementById(poemId).remove();
+                delete openPoems[poemId];
+            } else {
+                // If the poem is not open, open it.
+                var poemSection = document.createElement('div');
+                poemSection.className = 'poemSection';
+                poemSection.id = poemId;
+                poemSection.innerHTML = '<h2>' + poemTitle + '</h2><pre>' + poemText + '</pre>';
+                document.getElementById("poemContainer").appendChild(poemSection);
+                openPoems[poemId] = true;
+            }
         }
     </script>
 </head>
 <body>
-    <h1><a href="https://www.tiktok.com/@zylxnt" target="_blank" style="color: #8a2be2;">TikTok</a></h1>
-    <h2><a href="https://twitter.com/zylxnt" target="_blank" style="color: #8a2be2;">Twitter/X</a></h2>
-    <p> style="font-size: smaller;">I write all the poems that I post on this website and my social media</p>
-    <button onclick="displayPoem('1; the gentle brown earth')">1; the gentle brown earth</button>
-    <button onclick="displayPoem('Fortunes of the Flock')">Fortunes of the Flock</button>
-    <button onclick="displayPoem('Chains of Fear and Hope')">Chains of Fear and Hope</button>
-    <button onclick="displayPoem('The Masked Charade')">The Masked Charade</button>
-    <pre id="poemContent"></pre>
+    <div class="container">
+        <h1><a href="https://www.tiktok.com/@zylxnt" target="_blank" style="color: #8a2be2;">TikTok</a></h1>
+        <h2><a href="https://twitter.com/zylxnt" target="_blank" style="color: #8a2be2;">Twitter/X</a></h2>
+        <p style="font-size: smaller;">I write all the poems that I post on this website and my social media</p>
+        <div id="poemContainer">
+            <button onclick="displayPoem('1; the gentle brown earth', 'poem1')">1; the gentle brown earth</button>
+            <button onclick="displayPoem('Fortunes of the Flock', 'poem2')">Fortunes of the Flock</button>
+            <button onclick="displayPoem('Chains of Fear and Hope', 'poem3')">Chains of Fear and Hope</button>
+            <button onclick="displayPoem('The Masked Charade', 'poem4')">The Masked Charade</button>
+        </div>
+    </div>
 </body>
 </html>
