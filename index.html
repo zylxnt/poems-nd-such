@@ -90,6 +90,11 @@
             background-size: cover;
             background-position: center;
         }
+        #poem6 {
+            background-image: url('https://media.discordapp.net/attachments/1168666820790734953/1168785052751106058/20220218_173638.jpg');
+            background-size: cover;
+            background-position: center;
+        }
     </style>
     <script>
         var openPoems = {};
@@ -197,6 +202,22 @@
                             Grief becomes a part of you, where emotions collide.
                             It shapes your perspective, colors the world you see,
                             A bittersweet reminder of what used to be.`;
+            } else if (poemTitle === "2; a petals grace") {
+                poemText = `
+                            Amidst the blooms, a whispered sigh,
+                            In petals' grace, I wonder why.
+                            Life's vibrant hues, so vast and wide,
+                            Conceal the fears that dwell inside.
+
+                            In beauty's mask, I try to hide,
+                            A secret fear, I can't abide.
+                            To live's a dance, to death, we glide,
+                            In both, I seek what's locked inside.
+
+                            Like petals trembling, kissed by night,
+                            I fear the day's relentless light,
+                            Yet in the dark, shadows ignite,
+                            The bloom of fears, their hidden flight.`;
             }
 
             if (openPoems[poemId]) {
@@ -267,6 +288,7 @@
             <button onclick="displayPoem('Chains of Fear and Hope', 'poem3')">Chains of Fear and Hope</button>
             <button onclick="displayPoem('The Masked Charade', 'poem4')">The Masked Charade</button>
             <button onclick="displayPoem('A Tapestry of Grief', 'poem5')">A Tapestry of Grief</button>
+            <button onclick="displayPoem('2; a petals grace', 'poem6')">2; a petals grace</button>
         </div>
     </div>
     <div class="container holidaySection">
