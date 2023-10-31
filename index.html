@@ -47,6 +47,49 @@
         .holidaySubMenu button {
             margin: 5px;
         }
+
+        .poemText {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 10px;
+            border: 1px solid #000;
+        }
+
+        .poemTitle {
+            background-color: rgba(0, 0, 0, 0.7); /* Add a black background to the title */
+            padding: 10px; /* Add padding to the title */
+            border: 1px solid #000; /* Add a black border around the title */
+        }
+
+        #poem1 {
+            background-image: url('https://cdn.discordapp.com/attachments/1168666820790734953/1168709465198035084/Capture_2023-10-14-23-35-19.png');
+            background-size: cover;
+            background-position: center;
+        }
+        #poem2 {
+            background-image: url('https://media.discordapp.net/attachments/1168666820790734953/1168713143489404969/Snapchat-47955559.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+        #poem3 {
+            background-image: url('https://media.discordapp.net/attachments/1168666820790734953/1168804071029874708/20231001_180242_HDR.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+        #poem4 {
+            background-image: url('https://cdn.discordapp.com/attachments/1168666820790734953/1168804070560116736/Snapchat-1964563680.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+        #poem5 {
+            background-image: url('https://media.discordapp.net/attachments/1168666820790734953/1168785051157270569/20210426_200932.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+        #halloweenPoem {
+            background-image: url('https://media.discordapp.net/attachments/1168666820790734953/1168785050591035413/ea960343b5b2b5a7a8ea7cc7cf723066.jpg');
+            background-size: cover;
+            background-position: center;
+        }
     </style>
     <script>
         var openPoems = {};
@@ -163,7 +206,7 @@
                 var poemSection = document.createElement('div');
                 poemSection.className = 'poemSection';
                 poemSection.id = poemId;
-                poemSection.innerHTML = '<h2>' + poemTitle + '</h2><pre>' + poemText + '</pre>';
+                poemSection.innerHTML = '<h2 class="poemTitle">' + poemTitle + '</h2><pre class="poemText">' + poemText + '</pre>';
                 document.getElementById("poemContainer").appendChild(poemSection);
                 openPoems[poemId] = true;
             }
@@ -201,7 +244,7 @@
                 var poemSection = document.createElement('div');
                 poemSection.className = 'poemSection';
                 poemSection.id = poemId;
-                poemSection.innerHTML = '<h2>' + poemTitle + '</h2><pre>' + poemText + '</pre>';
+                poemSection.innerHTML = '<h2 class="poemTitle">' + poemTitle + '</h2><pre class="poemText">' + poemText + '</pre>';
                 document.getElementById("holidayPoemContainer").appendChild(poemSection);
                 openHolidayPoems[poemId] = true;
             }
