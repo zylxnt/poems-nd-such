@@ -8,7 +8,7 @@
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
-            color: #ffffff; /* Set text color to white for better visibility */
+            color: #ffffff;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -18,17 +18,34 @@
         }
 
         .container {
-            max-height: 70vh; /* Set a maximum height for the container */
-            overflow-y: auto; /* Enable vertical scrolling when the content exceeds the container height */
+            max-height: 70vh;
+            overflow-y: auto;
             display: flex;
             flex-direction: column;
             align-items: center;
         }
 
         .poemSection {
-            background-color: rgba(0, 0, 0, 0.7); /* Add a semi-transparent background to make the text more readable */
+            background-color: rgba(0, 0, 0, 0.7);
             padding: 20px;
             margin-bottom: 20px;
+        }
+
+        .holidaySection {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            margin-top: 20px;
+            max-height: 40vh;
+            overflow-y: auto;
+        }
+
+        .holidaySubMenu {
+            display: none;
+            margin-top: 10px;
+        }
+
+        .holidaySubMenu button {
+            margin: 5px;
         }
     </style>
     <script>
@@ -36,6 +53,7 @@
 
         function displayPoem(poemTitle, poemId) {
             var poemText = "";
+
             if (poemTitle === "1; the gentle brown earth") {
                 poemText = `
                             to rest in the gentle brown earth,
@@ -135,14 +153,13 @@
                             Though the pain may lessen, the tears may subside,
                             Grief becomes a part of you, where emotions collide.
                             It shapes your perspective, colors the world you see,
-                            A bittersweet reminder of what used to be.`; 
+                            A bittersweet reminder of what used to be.`;
             }
+
             if (openPoems[poemId]) {
-                // If the poem is already open, close it.
                 document.getElementById(poemId).remove();
                 delete openPoems[poemId];
             } else {
-                // If the poem is not open, open it.
                 var poemSection = document.createElement('div');
                 poemSection.className = 'poemSection';
                 poemSection.id = poemId;
@@ -150,6 +167,49 @@
                 document.getElementById("poemContainer").appendChild(poemSection);
                 openPoems[poemId] = true;
             }
+        }
+
+        var openHolidayPoems = {};
+
+        function displayHolidayPoem(poemTitle, poemId) {
+            var poemText = "";
+
+            if (poemTitle === "Halloween 2023") {
+                poemText = `
+                            Beneath the moon's soft, silvery gleam,
+                            A night of Halloween, a dreamlike theme.
+                            Ghosts and goblins, a playful scene,
+                            Trick or treat, in costumes, we convene.
+
+                            Jack-o'-lanterns, their grins so bright,
+                            Guide our way through the dark of night.
+                            Witches brew potions, a spectral spell,
+                            Halloween's magic, where enchantments dwell.
+
+                            In this world of mystery and delight,
+                            Halloween's eve, a wondrous sight,
+                            Celebrate the enchantment, let it be seen,
+                            On this special night of Halloween.
+
+                            HAPPY HALLOWEEN!!`;
+            } // You can add more holiday poems here
+
+            if (openHolidayPoems[poemId]) {
+                document.getElementById(poemId).remove();
+                delete openHolidayPoems[poemId];
+            } else {
+                var poemSection = document.createElement('div');
+                poemSection.className = 'poemSection';
+                poemSection.id = poemId;
+                poemSection.innerHTML = '<h2>' + poemTitle + '</h2><pre>' + poemText + '</pre>';
+                document.getElementById("holidayPoemContainer").appendChild(poemSection);
+                openHolidayPoems[poemId] = true;
+            }
+        }
+
+        function toggleHolidaySubMenu() {
+            var subMenu = document.getElementById("holidaySubMenu");
+            subMenu.style.display = subMenu.style.display === "none" ? "block" : "none";
         }
     </script>
 </head>
@@ -166,5 +226,13 @@
             <button onclick="displayPoem('A Tapestry of Grief', 'poem5')">A Tapestry of Grief</button>
         </div>
     </div>
+    <div class="container holidaySection">
+        <button onclick="toggleHolidaySubMenu()">Holiday Poems</button>
+        <div class="holidaySubMenu" id="holidaySubMenu">
+            <button onclick="displayHolidayPoem('Halloween 2023', 'halloweenPoem')">Halloween 2023</button>
+            <!-- You can add more holiday poem buttons here -->
+        </div>
+    </div>
+    <div id="holidayPoemContainer" class="holidaySection"></div>
 </body>
 </html>
