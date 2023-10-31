@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Poem</title>
+    <style>
+        body {
+            background-image: url('https://cdn.discordapp.com/attachments/1168666820790734953/1168713143489404969/Snapchat-47955559.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: #ffffff; /* Set text color to white for better visibility */
+        }
+
+        #poemContent {
+            background-color: rgba(0, 0, 0, 0.7); /* Add a semi-transparent background to make the text more readable */
+            padding: 20px;
+        }
+    </style>
+    <script>
+        function displayPoem(poemTitle) {
+            var poemText = "";
+            if (poemTitle === "1; the gentle brown earth") {
+                poemText = `
+                            to rest in the gentle brown earth,
+                            with grasses swaying above in mirth,
+                            where silence is the only sound,
+                            no yesterday, no morrow to be found.
+
+                            to forget the weight of passing time,
+                            to forget the trials of this life's climb,
+                            in peaceful slumber, I'd be released,
+                            in death's embrace, I'd find my peace`;
+            } else if (poemTitle === "Fortunes of the Flock") {
+                poemText = `
+                            In a world ripe with prospects for change,
+                            Utopias we'd build, in a scope so wide in range.
+                            Yet education holds the power, don't you see?
+                            To cultivate minds for a brighter destiny.
+
+                            Money, a human invention's reign,
+                            From politics to borders, they all interplay.
+                            The products of our thoughts and intention,
+                            Bringing both hope and dissent, beyond convention.
+
+                            When we teach conformity, the herd mentality,
+                            Selfishness prevails, driving brutality.
+                            In this bleak future, our existence may die,
+                            Like parasites in a Petri dish, we'll say goodbye.
+
+                            In the pursuit of fortune and fame, we find,
+                            A world where desires and greed can blind.
+                            As we chase after more, our values decay,
+                            Our path grows uncertain, led astray.
+
+                            But our future is bleak, humanity at stake,
+                            As money's the game that we all partake.
+                            We're parasites in a Petri dish, hearts gone cold,
+                            Like mold on a surface, till our story's told.`;
+            } else if (poemTitle === "Chains of Fear and Hope") {
+                poemText = `
+                            In the depths of despair, I long to flee,
+                            But fear binds me, for all to see.
+                            The weight of darkness, a relentless tide,
+                            Yet an ember of hope, deep down inside.
+
+                            I yearn to escape this relentless fight,
+                            To find a haven in the endless night,
+                            But fear whispers softly, 'What if you stay?'
+                            To share your burden and find your way.
+
+                            The battle within, a silent plea,
+                            A plea for those who can set me free,
+                            To hold my hand, to lend their light,
+                            And guide me through the darkest night.
+
+                            Invisible chains, they keep me here,
+                            Their weight too heavy, their presence clear.
+                            A prison of thoughts, self-doubt's cruel domain,
+                            Invisible but unyielding, they cause such pain.
+
+                            Yet I hold tight to this fragile thread,
+                            Hoping for rescue from the darkness, I dread.
+                            In the depths of despair, I long to find,
+                            A way to heal my wounded mind.`;
+            } else if (poemTitle === "The Masked Charade") {
+                poemText = `
+                            In a whirlwind of emotion, I was once embraced,
+                            A cup filled to the top, in feelings I was encased.
+                            But when it overflowed, my heart's relentless tide,
+                            I found myself adrift, with emotions cast aside.
+
+                            In that maelstrom of sentiment, I soared high and low,
+                            A rollercoaster of feelings, a captivating show.
+                            But as the tempest raged and emotions did abate,
+                            I drifted in the void, my soul's uncertain fate.
+
+                            Gone was the happiness, vanished the sorrow,
+                            Anger and despair, I could no longer borrow.
+                            In the void's silent grip, I silently dwell,
+                            A hollow shell, where once emotions used to swell.
+
+                            Within this quiet void, my thoughts take flight,
+                            A landscape of contemplation, in the still of the night.
+                            Masked emotions play their part, a charade I play so well,
+                            Hiding the emptiness, as I navigate this spell.`;
+            }
+            document.getElementById("poemContent").textContent = poemText;
+        }
+    </script>
+</head>
+<body>
+    <h1><a href="https://www.tiktok.com/@zylxnt" target="_blank">TikTok: https://www.tiktok.com/@zylxnt</a></h1>
+    <h2><a href="https://twitter.com/zylxnt" target="_blank">Twitter/X: https://twitter.com/zylxnt</a></h2>
+    <button onclick="displayPoem('1; the gentle brown earth')">1; the gentle brown earth</button>
+    <button onclick="displayPoem('Fortunes of the Flock')">Fortunes of the Flock</button>
+    <button onclick="displayPoem('Chains of Fear and Hope')">Chains of Fear and Hope</button>
+    <button onclick="displayPoem('The Masked Charade')">The Masked Charade</button>
+    <pre id="poemContent"></pre>
+</body>
+</html>
