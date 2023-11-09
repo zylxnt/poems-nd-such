@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
     <title>My Poem Archive</title>
     <style>
@@ -25,18 +26,14 @@
             align-items: center;
         }
 
-        .poemSection {
-            background-color: rgba(0, 0, 0, 0.7);
-            padding: 20px;
-            margin-bottom: 20px;
-        }
-
+        .poemSection,
         .holidaySection {
             background-color: rgba(0, 0, 0, 0.7);
             padding: 20px;
-            margin-top: 20px;
+            margin: 20px 0;
             max-height: 40vh;
             overflow-y: auto;
+            width: 70%;
         }
 
         .holidaySubMenu {
@@ -55,9 +52,19 @@
         }
 
         .poemTitle {
-            background-color: rgba(0, 0, 0, 0.7); /* Add a black background to the title */
-            padding: 10px; /* Add padding to the title */
-            border: 1px solid #000; /* Add a black border around the title */
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 10px;
+            border: 1px solid #000;
+            color: #fff;
+        }
+
+        .poemButton {
+            margin: 5px;
+            background-color: #8a2be2;
+            color: #fff;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
         }
 
         #poem1 {
@@ -65,33 +72,45 @@
             background-size: cover;
             background-position: center;
         }
+
         #poem2 {
             background-image: url('https://media.discordapp.net/attachments/1168666820790734953/1168713143489404969/Snapchat-47955559.jpg');
             background-size: cover;
             background-position: center;
         }
+
         #poem3 {
             background-image: url('https://media.discordapp.net/attachments/1168666820790734953/1168804071029874708/20231001_180242_HDR.jpg');
             background-size: cover;
             background-position: center;
         }
+
         #poem4 {
             background-image: url('https://cdn.discordapp.com/attachments/1168666820790734953/1168804070560116736/Snapchat-1964563680.jpg');
             background-size: cover;
             background-position: center;
         }
+
         #poem5 {
             background-image: url('https://media.discordapp.net/attachments/1168666820790734953/1168785051157270569/20210426_200932.jpg');
             background-size: cover;
             background-position: center;
         }
+
         #halloweenPoem {
             background-image: url('https://media.discordapp.net/attachments/1168666820790734953/1168785050591035413/ea960343b5b2b5a7a8ea7cc7cf723066.jpg');
             background-size: cover;
             background-position: center;
         }
+
         #poem6 {
             background-image: url('https://media.discordapp.net/attachments/1168666820790734953/1168785052751106058/20220218_173638.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        #poem7 {
+            background-image: url('https://cdn.discordapp.com/attachments/1168666820790734953/1172045127045369926/20231106_160226_HDR.jpg');
             background-size: cover;
             background-position: center;
         }
@@ -218,6 +237,22 @@
                             I fear the day's relentless light,
                             Yet in the dark, shadows ignite,
                             The bloom of fears, their hidden flight.`;
+            } else if (poemTitle === "My Harmony Rediscovered") {
+                poemText = `
+                            In the tapestry of life, a plot rewrite,
+                            A special girl, a serendipitous light.
+                            Halting plans, a pause in my stride,
+                            As she re-enters, love's flow and tide.
+
+                            Once a void, cracked and stark,
+                            Now filled with something, a flame in the dark.
+                            Emotions dance, a subtle reveal,
+                            Her presence, a remedy, my heart can feel. 
+
+                            So, in the script of fate, a twist unfolds,
+                            A story rewritten, a saga retold.
+                            Her essence, a balm, a soothing calm,
+                            In the symphony of love, a newfound psalm.`;
             }
 
             if (openPoems[poemId]) {
@@ -235,47 +270,49 @@
 
         var openHolidayPoems = {};
 
-        function displayHolidayPoem(poemTitle, poemId) {
-            var poemText = "";
+    function displayHolidayPoem(poemTitle, poemId) {
+        var poemText = "";
 
-            if (poemTitle === "Halloween 2023") {
-                poemText = `
-                            Beneath the moon's soft, silvery gleam,
-                            A night of Halloween, a dreamlike theme.
-                            Ghosts and goblins, a playful scene,
-                            Trick or treat, in costumes, we convene.
+        if (poemTitle === "Halloween 2023") {
+            poemText = `
+            Beneath the moon's soft, silvery gleam,
+            A night of Halloween, a dreamlike theme.
+            Ghosts and goblins, a playful scene,
+            Trick or treat, in costumes, we convene.
 
-                            Jack-o'-lanterns, their grins so bright,
-                            Guide our way through the dark of night.
-                            Witches brew potions, a spectral spell,
-                            Halloween's magic, where enchantments dwell.
+            Jack-o'-lanterns, their grins so bright,
+            Guide our way through the dark of night.
+            Witches brew potions, a spectral spell,
+            Halloween's magic, where enchantments dwell.
 
-                            In this world of mystery and delight,
-                            Halloween's eve, a wondrous sight,
-                            Celebrate the enchantment, let it be seen,
-                            On this special night of Halloween.
+            In this world of mystery and delight,
+            Halloween's eve, a wondrous sight,
+            Celebrate the enchantment, let it be seen,
+            On this special night of Halloween.
 
-                            HAPPY HALLOWEEN!!`;
-            } // You can add more holiday poems here
-
-            if (openHolidayPoems[poemId]) {
-                document.getElementById(poemId).remove();
-                delete openHolidayPoems[poemId];
-            } else {
-                var poemSection = document.createElement('div');
-                poemSection.className = 'poemSection';
-                poemSection.id = poemId;
-                poemSection.innerHTML = '<h2 class="poemTitle">' + poemTitle + '</h2><pre class="poemText">' + poemText + '</pre>';
-                document.getElementById("holidayPoemContainer").appendChild(poemSection);
-                openHolidayPoems[poemId] = true;
-            }
+            HAPPY HALLOWEEN!!
+            `;
         }
 
-        function toggleHolidaySubMenu() {
-            var subMenu = document.getElementById("holidaySubMenu");
-            subMenu.style.display = subMenu.style.display === "none" ? "block" : "none";
+        if (openHolidayPoems[poemId]) {
+            document.getElementById(poemId).remove();
+            delete openHolidayPoems[poemId];
+        } else {
+            var poemSection = document.createElement('div');
+            poemSection.className = 'poemSection';
+            poemSection.id = poemId;
+            poemSection.innerHTML = '<h2 class="poemTitle">' + poemTitle + '</h2><pre class="poemText">' + poemText + '</pre>';
+            document.getElementById("holidayPoemContainer").appendChild(poemSection);
+            openHolidayPoems[poemId] = true;
         }
-    </script>
+    }
+
+    function toggleHolidaySubMenu() {
+        var subMenu = document.getElementById("holidaySubMenu");
+        subMenu.style.display = subMenu.style.display === "none" ? "block" : "none";
+    }
+</script>
+
 </head>
 <body>
     <div class="container">
@@ -289,6 +326,7 @@
             <button onclick="displayPoem('The Masked Charade', 'poem4')">The Masked Charade</button>
             <button onclick="displayPoem('A Tapestry of Grief', 'poem5')">A Tapestry of Grief</button>
             <button onclick="displayPoem('2; a petals grace', 'poem6')">2; a petals grace</button>
+            <button onclick="displayPoem('My Harmony Rediscovered', 'poem7')">My Harmony Rediscovered</button>
         </div>
     </div>
     <div class="container holidaySection">
