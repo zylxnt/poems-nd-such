@@ -102,9 +102,23 @@
             background-size: cover;
             background-position: center;
         }
-
         #poem6 {
+            background-image: url('https://i.postimg.cc/1z6d48zG/a-rythm-unbroken.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+        #poem7 {
+            background-image: url('https://i.postimg.cc/5ypT1D2D/twisted-realities.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+        #poem8 {
             background-image: url('https://i.postimg.cc/Qd7mJRrs/everyday-feels-the-same.png');
+            background-size: cover;
+            background-position: center;
+        }
+        #poem9 {
+            background-image: url('https://i.postimg.cc/PqRPCM73/to-dream.png');
             background-size: cover;
             background-position: center;
         }
@@ -212,6 +226,54 @@
                             I fear the day's relentless light,
                             Yet in the dark, shadows ignite,
                             The bloom of fears, their hidden flight.`;
+            } else if (poemTitle === "a rhythm unbroken") {
+                poemText = `
+                            In cycles spun, a dance of days,
+                            I tread the worn, habitual maze.
+                            A ceaseless loop, a scripted song,
+                            Yet yearning whispers where I don't belong.
+
+                            Repetition's grip, a subtle strain,
+                            A hope for change, yet all in vain.
+                            The echoes of routine, a deafening sound,
+                            In stagnant waters, dreams are drowned.
+
+                            I pivot and turn, attempting flight,
+                            Seeking a shift in the fading light.
+                            But alas, the rhythm persists,
+                            A tireless waltz, a mind that insists.
+
+                            Round and round, the seasons blend,
+                            In circles unbroken, the mind to mend.
+                            For change eludes this scripted trance,
+                            And sanity wavers in the rhythmic dance.`;
+
+            } else if (poemTitle === "twisted realities") {
+                poemText = `
+                            In the labyrinth of life, where reality and fantasy collide,
+			                A constant brawl unfolds, in the depths where shadows hide.
+                            Time, a renegade, dances freely, unhinged and untamed,
+                            Creating a world that seems a twisted nightmare, unnamed.
+
+                            Illusion and mirage intertwine, a freaky masquerade,
+                            Every moment warps and weaves, in a dance of shades.
+                            The routine, a haunting echo, a relentless, twisted song,
+                            A never-ending cycle, where chaos seems to belong.
+
+                            I strive to break free, yet the rhythm persists,
+                            A crazy pattern repeating, in the chaos that exists.
+                            Trapped within this nightmare, or a dance of pure madness?
+                            The lines blur, reality and illusion in a chaotic gladness.
+
+                            Days unfold like chapters in a tale surreal,
+                            A symphony of disarray, an enigma I feel.
+                            In this carnival of mayhem, where sanity's unmet,
+                            I question the nature of existence, a perpetual vignette.
+
+                            Is life a mirror, reflecting a warped design?
+                            Or am I entwined in a dance, where reality entwines?
+                            The clock ticks, the dance continues, a mesmerizing trance,
+                            In the mess of my life, reality and fantasy enhance.`;
             } else if (poemTitle === "everyday feels the same") {
                 poemText = `
                             Everyday feels the same,
@@ -231,6 +293,19 @@
                             But every path I take leads back to this unending routine.
                             I'm bound by these chains, invisible but strong,
                             Each day a repetition, a familiar song.`;
+            } else if (poemTitle === "to dream") {
+                poemText = `
+                            To dream,
+                            Of a land outside this desolate fog,
+                            Of an escape from this looming grog.
+
+                            To dream,
+                            Of a haven where my dreams can take flight,
+                            Instead of trapped in the shadows of night.
+
+                            To dream,
+                            I  want to break free,
+                            From these dreams that seem to be binding me.`;
             }
 
             if (openPoems[poemId]) {
@@ -244,8 +319,8 @@
                 document.getElementById("poemContainer").appendChild(poemSection);
                 openPoems[poemId] = true;
             }
+        
         }
-
         var openHolidayPoems = {};
 
     function displayHolidayPoem(poemTitle, poemId) {
@@ -303,7 +378,10 @@
             <button onclick="displayPoem('Chains of Fear and Hope', 'poem3')">Chains of Fear and Hope</button>
             <button onclick="displayPoem('A Tapestry of Grief', 'poem4')">A Tapestry of Grief</button>
             <button onclick="displayPoem('2; a petals grace', 'poem5')">2; a petals grace</button>
-            <button onclick="displayPoem('everyday feels the same', 'poem6')">everyday feels the same</button>
+            <button onclick="displayPoem('a rhythm unbroken', 'poem6')">a rhythm unbroken</button>
+            <button onclick="displayPoem('twisted realities', 'poem7')">twisted realities</button>
+            <button onclick="displayPoem('everyday feels the same', 'poem8')">everyday feels the same</button>
+            <button onclick="displayPoem('to dream', 'poem9')">to dream</button>
         </div>
     </div>
     <div class="container holidaySection">
